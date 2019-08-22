@@ -28,7 +28,21 @@ func main() {
 EOF
 ```
 ### D. Build and Run
-Build and run:
+
+ARM Android: Build and run on Android: ( default is 64-bit ELF file only run on Linux )
+```
+$ env GOOS=linux GOARCH=arm go build -o hello
+$ adb root
+$ adb push hello /data/
+$ adb shell
+Under Android Device Shell
+$ cd /data
+$ ./hello
+
+Hello, world.
+```
+
+PC Linux: Build and run on Linux: ( default is 64-bit ELF file only run on Linux )
 ```
 $ go build -o hello
 $ ./hello
